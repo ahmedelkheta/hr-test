@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>الموظفين - نظام النور HR</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet">
+  <style>
+    * { font-family: 'Cairo', sans-serif; }
+    .gradient-bg { background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%); }
+  </style>
+</head>
+<body class="bg-gray-50">
+
+  <!-- Header -->
+  <header class="bg-white shadow-sm border-b border-gray-200 sticky top-0 z-10">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <div class="w-10 h-10 gradient-bg rounded-lg flex items-center justify-center text-white text-xl font-bold">N</div>
+        <h1 class="text-lg font-bold text-gray-900">نظام النور HR</h1>
+      </div>
+      <div class="flex items-center gap-3">
+        <div class="w-9 h-9 bg-indigo-100 rounded-full flex items-center justify-center font-semibold text-indigo-700">ي</div>
+        <div class="text-sm">
+          <div class="font-semibold text-gray-900">يوسف الشيخ</div>
+          <div class="text-xs text-gray-500">CEO · Company Scope</div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="max-w-7xl mx-auto px-6 py-8 flex gap-6">
+
+    <!-- Sidebar -->
+    <aside class="w-60 shrink-0">
+      <nav class="bg-white rounded-xl shadow-sm border border-gray-200 p-4 space-y-1 sticky top-24">
+        <a href="index.html" class="flex items-center gap-3 px-4 py-3 text-gray-700 hover:bg-gray-50 rounded-lg"><span>🏠</span> الرئيسية</a>
+        <a href="employees.html" class="flex items-center gap-3 px-4 py-3 bg-indigo-50 text-indigo-700 rounded-lg font-semibold"><span>👥</span> الموظفين</a>
+        <a href="organization.html" class="flex items-center gap-3 px-4 py-3 text-gray-700 hover:bg-gray-50 rounded-lg"><span>🏢</span> الهيكل التنظيمي</a>
+        <a href="users-rbac.html" class="flex items-center gap-3 px-4 py-3 text-gray-700 hover:bg-gray-50 rounded-lg"><span>🛡️</span> Users + RBAC</a>
+      </nav>
+    </aside>
+
+    <!-- Main -->
+    <main class="flex-1">
+      <!-- Page Header -->
+      <div class="flex items-center justify-between mb-6">
+        <div>
+          <div class="text-sm text-gray-500 mb-1">الرئيسية ← الموظفين</div>
+          <h2 class="text-2xl font-bold text-gray-900">إدارة الموظفين</h2>
+        </div>
+        <div class="flex gap-2">
+          <button class="px-4 py-2 border border-gray-300 bg-white rounded-lg text-sm font-semibold hover:bg-gray-50">⬇ تصدير Excel</button>
+          <button class="px-4 py-2 bg-indigo-600 text-white rounded-lg text-sm font-semibold hover:bg-indigo-700 shadow-sm">+ إضافة موظف</button>
+        </div>
+      </div>
+
+      <!-- Stats -->
+      <div class="grid grid-cols-4 gap-4 mb-6">
+        <div class="bg-white p-4 rounded-xl shadow-sm border border-gray-200">
+          <div class="text-xs text-gray-500 mb-1">إجمالي الموظفين</div>
+          <div class="text-2xl font-bold text-gray-900">12</div>
+        </div>
+        <div class="bg-white p-4 rounded-xl shadow-sm border border-gray-200">
+          <div class="text-xs text-gray-500 mb-1">نشط (Active)</div>
+          <div class="text-2xl font-bold text-green-600">11</div>
+        </div>
+        <div class="bg-white p-4 rounded-xl shadow-sm border border-gray-200">
+          <div class="text-xs text-gray-500 mb-1">عنده Login</div>
+          <div class="text-2xl font-bold text-blue-600">11</div>
+        </div>
+        <div class="bg-white p-4 rounded-xl shadow-sm border border-gray-200">
+          <div class="text-xs text-gray-500 mb-1">بدون Login</div>
+          <div class="text-2xl font-bold text-gray-500">1</div>
+        </div>
+      </div>
+
+      <!-- Filters -->
+      <div class="bg-white p-4 rounded-xl shadow-sm border border-gray-200 mb-4 flex gap-3 flex-wrap items-center">
+        <input type="text" placeholder="🔍 بحث بالاسم، الرقم القومي، أو كود الموظف" class="flex-1 min-w-64 px-4 py-2 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500">
+        <select class="px-4 py-2 border border-gray-300 rounded-lg text-sm bg-white">
+          <option>كل الفروع</option>
+          <option>القاهرة</option>
+          <option>الإسكندرية</option>
+          <option>كفر الشيخ</option>
+          <option>طنطا</option>
+        </select>
+        <select class="px-4 py-2 border border-gray-300 rounded-lg text-sm bg-white">
+          <option>كل الأقسام</option>
+          <option>HR</option>
+          <option>Sales</option>
+          <option>IT</option>
+          <option>Operations</option>
+        </select>
+        <select class="px-4 py-2 border border-gray-300 rounded-lg text-sm bg-white">
+          <option>كل الحالات</option>
+          <option>Active</option>
+          <option>On Leave</option>
+          <option>Terminated</option>
+        </select>
+        <select class="px-4 py-2 border border-gray-300 rounded-lg text-sm bg-white">
+          <option>الكل</option>
+          <option>عنده Login</option>
+          <option>بدون Login</option>
+        </select>
+      </div>
+
+      <!-- Employees Table -->
+      <div class="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
+        <table class="w-full">
+          <thead class="bg-gray-50 border-b border-gray-200">
+            <tr>
+              <th class="px-6 py-3 text-right text-xs font-semibold text-gray-500 uppercase">الموظف</th>
+              <th class="px-6 py-3 text-right text-xs font-semibold text-gray-500 uppercase">الكود</th>
+              <th class="px-6 py-3 text-right text-xs font-semibold text-gray-500 uppercase">الفرع</th>
+              <th class="px-6 py-3 text-right text-xs font-semibold text-gray-500 uppercase">القسم</th>
+              <th class="px-6 py-3 text-right text-xs font-semibold text-gray-500 uppercase">المنصب</th>
+              <th class="px-6 py-3 text-right text-xs font-semibold text-gray-500 uppercase">الحالة</th>
+              <th class="px-6 py-3 text-right text-xs font-semibold text-gray-500 uppercase">Login</th>
+              <th class="px-6 py-3 text-right text-xs font-semibold text-gray-500 uppercase">الإجراءات</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-gray-200">
+
+            <tr class="hover:bg-gray-50">
+              <td class="px-6 py-3">
+                <div class="flex items-center gap-3">
+                  <div class="w-9 h-9 bg-purple-100 text-purple-700 rounded-full flex items-center justify-center font-bold text-sm">ي</div>
+                  <a href="employee-profile.html" class="font-semibold text-gray-900 hover:text-indigo-600">يوسف الشيخ</a>
+                </div>
+              </td>
+              <td class="px-6 py-3 text-sm text-gray-600">EMP-2020-001</td>
+              <td class="px-6 py-3 text-sm">القاهرة</td>
+              <td class="px-6 py-3 text-sm">Executive</td>
+              <td class="px-6 py-3 text-sm">CEO</td>
+              <td class="px-6 py-3"><span class="px-2 py-1 text-xs font-medium bg-green-100 text-green-700 rounded-full">Active</span></td>
+              <td class="px-6 py-3"><span class="text-green-600 text-lg">✓</span></td>
+              <td class="px-6 py-3"><a href="employee-profile.html" class="text-indigo-600 text-sm hover:underline">عرض</a></td>
+            </tr>
+
+            <tr class="hover:bg-gray-50">
+              <td class="px-6 py-3">
+                <div class="flex items-center gap-3">
+                  <div class="w-9 h-9 bg-pink-100 text-pink-700 rounded-full flex items-center justify-center font-bold text-sm">م</div>
+                  <a href="employee-profile.html" class="font-semibold text-gray-900 hover:text-indigo-600">منار حسام</a>
+                </div>
+              </td>
+              <td class="px-6 py-3 text-sm text-gray-600">EMP-2021-002</td>
+              <td class="px-6 py-3 text-sm">القاهرة</td>
+              <td class="px-6 py-3 text-sm">HR Cairo</td>
+              <td class="px-6 py-3 text-sm">HR Director</td>
+              <td class="px-6 py-3"><span class="px-2 py-1 text-xs font-medium bg-green-100 text-green-700 rounded-full">Active</span></td>
+              <td class="px-6 py-3"><span class="text-green-600 text-lg">✓</span></td>
+              <td class="px-6 py-3"><a href="employee-profile.html" class="text-indigo-600 text-sm hover:underline">عرض</a></td>
+            </tr>
+
+            <tr class="hover:bg-gray-50">
+              <td class="px-6 py-3">
+                <div class="flex items-center gap-3">
+                  <div class="w-9 h-9 bg-blue-100 text-blue-700 rounded-full flex items-center justify-center font-bold text-sm">أ</div>
+                  <a href="employee-profile.html" class="font-semibold text-gray-900 hover:text-indigo-600">أحمد سعيد</a>
+                </div>
+              </td>
+              <td class="px-6 py-3 text-sm text-gray-600">EMP-2022-003</td>
+              <td class="px-6 py-3 text-sm">الإسكندرية</td>
+              <td class="px-6 py-3 text-sm">HR Alex</td>
+              <td class="px-6 py-3 text-sm">HR Manager</td>
+              <td class="px-6 py-3"><span class="px-2 py-1 text-xs font-medium bg-green-100 text-green-700 rounded-full">Active</span></td>
+              <td class="px-6 py-3"><span class="text-green-600 text-lg">✓</span></td>
+              <td class="px-6 py-3"><a href="employee-profile.html" class="text-indigo-600 text-sm hover:underline">عرض</a></td>
+            </tr>
+
+            <tr class="hover:bg-gray-50">
+              <td class="px-6 py-3">
+                <div class="flex items-center gap-3">
+                  <div class="w-9 h-9 bg-cyan-100 text-cyan-700 rounded-full flex items-center justify-center font-bold text-sm">م</div>
+                  <a href="employee-profile.html" class="font-semibold text-gray-900 hover:text-indigo-600">محمد طارق</a>
+                </div>
+              </td>
+              <td class="px-6 py-3 text-sm text-gray-600">EMP-2022-004</td>
+              <td class="px-6 py-3 text-sm">كفر الشيخ</td>
+              <td class="px-6 py-3 text-sm">HR Kafr</td>
+              <td class="px-6 py-3 text-sm">HR Manager</td>
+              <td class="px-6 py-3"><span class="px-2 py-1 text-xs font-medium bg-green-100 text-green-700 rounded-full">Active</span></td>
+              <td class="px-6 py-3"><span class="text-green-600 text-lg">✓</span></td>
+              <td class="px-6 py-3"><a href="employee-profile.html" class="text-indigo-600 text-sm hover:underline">عرض</a></td>
+            </tr>
+
+            <tr class="hover:bg-gray-50">
+              <td class="px-6 py-3">
+                <div class="flex items-center gap-3">
+                  <div class="w-9 h-9 bg-rose-100 text-rose-700 rounded-full flex items-center justify-center font-bold text-sm">س</div>
+                  <a href="employee-profile.html" class="font-semibold text-gray-900 hover:text-indigo-600">سلمى العزب</a>
+                </div>
+              </td>
+              <td class="px-6 py-3 text-sm text-gray-600">EMP-2021-005</td>
+              <td class="px-6 py-3 text-sm">الإسكندرية</td>
+              <td class="px-6 py-3 text-sm">Sales Alex</td>
+              <td class="px-6 py-3 text-sm">Sales Director ⭐</td>
+              <td class="px-6 py-3"><span class="px-2 py-1 text-xs font-medium bg-green-100 text-green-700 rounded-full">Active</span></td>
+              <td class="px-6 py-3"><span class="text-green-600 text-lg">✓</span></td>
+              <td class="px-6 py-3"><a href="employee-profile.html" class="text-indigo-600 text-sm hover:underline">عرض</a></td>
+            </tr>
+
+            <tr class="hover:bg-gray-50">
+              <td class="px-6 py-3">
+                <div class="flex items-center gap-3">
+                  <div class="w-9 h-9 bg-orange-100 text-orange-700 rounded-full flex items-center justify-center font-bold text-sm">خ</div>
+                  <a href="employee-profile.html" class="font-semibold text-gray-900 hover:text-indigo-600">خالد فؤاد</a>
+                </div>
+              </td>
+              <td class="px-6 py-3 text-sm text-gray-600">EMP-2020-006</td>
+              <td class="px-6 py-3 text-sm">طنطا</td>
+              <td class="px-6 py-3 text-sm">Executive Tanta</td>
+              <td class="px-6 py-3 text-sm">Branch Manager</td>
+              <td class="px-6 py-3"><span class="px-2 py-1 text-xs font-medium bg-green-100 text-green-700 rounded-full">Active</span></td>
+              <td class="px-6 py-3"><span class="text-green-600 text-lg">✓</span></td>
+              <td class="px-6 py-3"><a href="employee-profile.html" class="text-indigo-600 text-sm hover:underline">عرض</a></td>
+            </tr>
+
+            <tr class="hover:bg-gray-50">
+              <td class="px-6 py-3">
+                <div class="flex items-center gap-3">
+                  <div class="w-9 h-9 bg-teal-100 text-teal-700 rounded-full flex items-center justify-center font-bold text-sm">م</div>
+                  <a href="employee-profile.html" class="font-semibold text-gray-900 hover:text-indigo-600">منى عبد الله</a>
+                </div>
+              </td>
+              <td class="px-6 py-3 text-sm text-gray-600">EMP-2023-007</td>
+              <td class="px-6 py-3 text-sm">الإسكندرية</td>
+              <td class="px-6 py-3 text-sm">HR Alex</td>
+              <td class="px-6 py-3 text-sm">HR Specialist</td>
+              <td class="px-6 py-3"><span class="px-2 py-1 text-xs font-medium bg-green-100 text-green-700 rounded-full">Active</span></td>
+              <td class="px-6 py-3"><span class="text-green-600 text-lg">✓</span></td>
+              <td class="px-6 py-3"><a href="employee-profile.html" class="text-indigo-600 text-sm hover:underline">عرض</a></td>
+            </tr>
+
+            <tr class="hover:bg-gray-50">
+              <td class="px-6 py-3">
+                <div class="flex items-center gap-3">
+                  <div class="w-9 h-9 bg-violet-100 text-violet-700 rounded-full flex items-center justify-center font-bold text-sm">ن</div>
+                  <a href="employee-profile.html" class="font-semibold text-gray-900 hover:text-indigo-600">نهى السيد</a>
+                </div>
+              </td>
+              <td class="px-6 py-3 text-sm text-gray-600">EMP-2022-008</td>
+              <td class="px-6 py-3 text-sm">كفر الشيخ</td>
+              <td class="px-6 py-3 text-sm">Sales Kafr</td>
+              <td class="px-6 py-3 text-sm">Dept Manager</td>
+              <td class="px-6 py-3"><span class="px-2 py-1 text-xs font-medium bg-green-100 text-green-700 rounded-full">Active</span></td>
+              <td class="px-6 py-3"><span class="text-green-600 text-lg">✓</span></td>
+              <td class="px-6 py-3"><a href="employee-profile.html" class="text-indigo-600 text-sm hover:underline">عرض</a></td>
+            </tr>
+
+            <tr class="hover:bg-gray-50">
+              <td class="px-6 py-3">
+                <div class="flex items-center gap-3">
+                  <div class="w-9 h-9 bg-amber-100 text-amber-700 rounded-full flex items-center justify-center font-bold text-sm">ع</div>
+                  <a href="employee-profile.html" class="font-semibold text-gray-900 hover:text-indigo-600">عمر إبراهيم</a>
+                </div>
+              </td>
+              <td class="px-6 py-3 text-sm text-gray-600">EMP-2024-009</td>
+              <td class="px-6 py-3 text-sm">طنطا</td>
+              <td class="px-6 py-3 text-sm">IT Tanta</td>
+              <td class="px-6 py-3 text-sm">IT Engineer</td>
+              <td class="px-6 py-3"><span class="px-2 py-1 text-xs font-medium bg-green-100 text-green-700 rounded-full">Active</span></td>
+              <td class="px-6 py-3"><span class="text-green-600 text-lg">✓</span></td>
+              <td class="px-6 py-3"><a href="employee-profile.html" class="text-indigo-600 text-sm hover:underline">عرض</a></td>
+            </tr>
+
+            <tr class="hover:bg-gray-50">
+              <td class="px-6 py-3">
+                <div class="flex items-center gap-3">
+                  <div class="w-9 h-9 bg-lime-100 text-lime-700 rounded-full flex items-center justify-center font-bold text-sm">ع</div>
+                  <a href="employee-profile.html" class="font-semibold text-gray-900 hover:text-indigo-600">علي رضا</a>
+                </div>
+              </td>
+              <td class="px-6 py-3 text-sm text-gray-600">EMP-2023-010</td>
+              <td class="px-6 py-3 text-sm">كفر الشيخ</td>
+              <td class="px-6 py-3 text-sm">Sales Kafr</td>
+              <td class="px-6 py-3 text-sm">Sales Rep</td>
+              <td class="px-6 py-3"><span class="px-2 py-1 text-xs font-medium bg-green-100 text-green-700 rounded-full">Active</span></td>
+              <td class="px-6 py-3"><span class="text-green-600 text-lg">✓</span></td>
+              <td class="px-6 py-3"><a href="employee-profile.html" class="text-indigo-600 text-sm hover:underline">عرض</a></td>
+            </tr>
+
+            <tr class="hover:bg-gray-50">
+              <td class="px-6 py-3">
+                <div class="flex items-center gap-3">
+                  <div class="w-9 h-9 bg-fuchsia-100 text-fuchsia-700 rounded-full flex items-center justify-center font-bold text-sm">ه</div>
+                  <a href="employee-profile.html" class="font-semibold text-gray-900 hover:text-indigo-600">هند مصطفى</a>
+                </div>
+              </td>
+              <td class="px-6 py-3 text-sm text-gray-600">EMP-2023-011</td>
+              <td class="px-6 py-3 text-sm">الإسكندرية</td>
+              <td class="px-6 py-3 text-sm">Sales Alex</td>
+              <td class="px-6 py-3 text-sm">Sales Rep</td>
+              <td class="px-6 py-3"><span class="px-2 py-1 text-xs font-medium bg-green-100 text-green-700 rounded-full">Active</span></td>
+              <td class="px-6 py-3"><span class="text-green-600 text-lg">✓</span></td>
+              <td class="px-6 py-3"><a href="employee-profile.html" class="text-indigo-600 text-sm hover:underline">عرض</a></td>
+            </tr>
+
+            <tr class="hover:bg-gray-50 bg-yellow-50">
+              <td class="px-6 py-3">
+                <div class="flex items-center gap-3">
+                  <div class="w-9 h-9 bg-gray-200 text-gray-700 rounded-full flex items-center justify-center font-bold text-sm">ع</div>
+                  <a href="employee-profile.html" class="font-semibold text-gray-900 hover:text-indigo-600">عبد الرحمن أنور</a>
+                </div>
+              </td>
+              <td class="px-6 py-3 text-sm text-gray-600">EMP-2024-012</td>
+              <td class="px-6 py-3 text-sm">طنطا</td>
+              <td class="px-6 py-3 text-sm">Operations Tanta</td>
+              <td class="px-6 py-3 text-sm">Office Boy</td>
+              <td class="px-6 py-3"><span class="px-2 py-1 text-xs font-medium bg-green-100 text-green-700 rounded-full">Active</span></td>
+              <td class="px-6 py-3">
+                <span class="text-gray-400 text-lg" title="مفيش Login">✗</span>
+                <span class="text-xs text-gray-500 mr-1">بدون Login</span>
+              </td>
+              <td class="px-6 py-3"><a href="employee-profile.html" class="text-indigo-600 text-sm hover:underline">عرض</a></td>
+            </tr>
+
+          </tbody>
+        </table>
+
+        <!-- Pagination -->
+        <div class="px-6 py-3 border-t border-gray-200 flex items-center justify-between text-sm">
+          <div class="text-gray-500">عرض 12 من 12</div>
+          <div class="flex gap-2">
+            <button class="px-3 py-1 border border-gray-300 rounded text-gray-400 cursor-not-allowed">السابق</button>
+            <button class="px-3 py-1 border border-gray-300 rounded text-gray-400 cursor-not-allowed">التالي</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Note -->
+      <div class="mt-6 bg-blue-50 border border-blue-200 rounded-xl p-4 text-sm text-blue-900">
+        💡 <b>ملاحظة على البيانات اللي تظهر:</b> أنت بتشوف <b>كل</b> الموظفين لأنك <b>CEO (Company Scope)</b>. لو دخلت كـ HR Manager في فرع الإسكندرية، هتشوف 4 موظفين بس. ده الـ Scope Filtering شغال.
+      </div>
+
+    </main>
+  </div>
+
+</body>
+</html>

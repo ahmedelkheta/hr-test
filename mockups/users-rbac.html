@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>Users + RBAC - نظام النور HR</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet">
+  <style>
+    * { font-family: 'Cairo', sans-serif; }
+    .gradient-bg { background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%); }
+  </style>
+</head>
+<body class="bg-gray-50">
+
+  <header class="bg-white shadow-sm border-b border-gray-200 sticky top-0 z-10">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <div class="w-10 h-10 gradient-bg rounded-lg flex items-center justify-center text-white text-xl font-bold">N</div>
+        <h1 class="text-lg font-bold text-gray-900">نظام النور HR</h1>
+      </div>
+      <div class="flex items-center gap-3">
+        <div class="w-9 h-9 bg-indigo-100 rounded-full flex items-center justify-center font-semibold text-indigo-700">ي</div>
+        <div class="text-sm">
+          <div class="font-semibold text-gray-900">يوسف الشيخ</div>
+          <div class="text-xs text-gray-500">CEO</div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="max-w-7xl mx-auto px-6 py-8 flex gap-6">
+
+    <aside class="w-60 shrink-0">
+      <nav class="bg-white rounded-xl shadow-sm border border-gray-200 p-4 space-y-1 sticky top-24">
+        <a href="index.html" class="flex items-center gap-3 px-4 py-3 text-gray-700 hover:bg-gray-50 rounded-lg"><span>🏠</span> الرئيسية</a>
+        <a href="employees.html" class="flex items-center gap-3 px-4 py-3 text-gray-700 hover:bg-gray-50 rounded-lg"><span>👥</span> الموظفين</a>
+        <a href="organization.html" class="flex items-center gap-3 px-4 py-3 text-gray-700 hover:bg-gray-50 rounded-lg"><span>🏢</span> الهيكل التنظيمي</a>
+        <a href="users-rbac.html" class="flex items-center gap-3 px-4 py-3 bg-indigo-50 text-indigo-700 rounded-lg font-semibold"><span>🛡️</span> Users + RBAC</a>
+      </nav>
+    </aside>
+
+    <main class="flex-1">
+
+      <div class="text-sm text-gray-500 mb-1">الرئيسية ← Users + RBAC + Scopes</div>
+      <h2 class="text-2xl font-bold text-gray-900 mb-6">إدارة الحسابات والأدوار والصلاحيات</h2>
+
+      <!-- Tabs -->
+      <div class="bg-white rounded-xl shadow-sm border border-gray-200 mb-6 p-2 flex gap-1">
+        <button class="px-4 py-2 bg-indigo-600 text-white rounded-lg text-sm font-semibold flex items-center gap-2">
+          <span>👥</span> Users <span class="px-1.5 py-0.5 bg-white text-indigo-600 rounded-full text-xs">11</span>
+        </button>
+        <button class="px-4 py-2 text-gray-700 hover:bg-gray-100 rounded-lg text-sm font-semibold flex items-center gap-2">
+          <span>🎭</span> Roles <span class="px-1.5 py-0.5 bg-gray-200 rounded-full text-xs">8</span>
+        </button>
+        <button class="px-4 py-2 text-gray-700 hover:bg-gray-100 rounded-lg text-sm font-semibold flex items-center gap-2">
+          <span>🔑</span> Permissions <span class="px-1.5 py-0.5 bg-gray-200 rounded-full text-xs">25</span>
+        </button>
+        <button class="px-4 py-2 text-gray-700 hover:bg-gray-100 rounded-lg text-sm font-semibold flex items-center gap-2">
+          <span>📊</span> Permission Matrix
+        </button>
+        <button class="px-4 py-2 text-gray-700 hover:bg-gray-100 rounded-lg text-sm font-semibold flex items-center gap-2">
+          <span>📜</span> Audit Log
+        </button>
+      </div>
+
+      <div class="grid grid-cols-3 gap-6">
+
+        <!-- LEFT: Users List -->
+        <div class="col-span-2 bg-white rounded-xl shadow-sm border border-gray-200">
+          <div class="p-4 border-b border-gray-200 flex items-center justify-between">
+            <h3 class="font-bold text-gray-900">الحسابات (Users)</h3>
+            <button class="px-3 py-1.5 bg-indigo-600 text-white rounded-lg text-xs font-semibold hover:bg-indigo-700">+ إنشاء User</button>
+          </div>
+
+          <div class="divide-y divide-gray-200">
+            <!-- User 1: يوسف (CEO) -->
+            <div class="p-4 hover:bg-gray-50 flex items-center gap-3 bg-indigo-50">
+              <div class="w-10 h-10 bg-purple-100 text-purple-700 rounded-full flex items-center justify-center font-bold">ي</div>
+              <div class="flex-1">
+                <div class="font-semibold text-gray-900">يوسف الشيخ</div>
+                <div class="text-xs text-gray-500">📱 0101000000 · CEO</div>
+              </div>
+              <div class="text-left">
+                <span class="px-2 py-1 text-xs font-medium bg-purple-100 text-purple-700 rounded-full">super_admin</span>
+                <div class="text-xs text-gray-500 mt-1">Company Scope</div>
+              </div>
+            </div>
+
+            <!-- User 2: منار (HR Director) -->
+            <div class="p-4 hover:bg-gray-50 flex items-center gap-3">
+              <div class="w-10 h-10 bg-pink-100 text-pink-700 rounded-full flex items-center justify-center font-bold">م</div>
+              <div class="flex-1">
+                <div class="font-semibold text-gray-900">منار حسام</div>
+                <div class="text-xs text-gray-500">📱 0101000001 · HR Director</div>
+              </div>
+              <div class="text-left">
+                <span class="px-2 py-1 text-xs font-medium bg-blue-100 text-blue-700 rounded-full">hr_director</span>
+                <div class="text-xs text-gray-500 mt-1">Company Scope</div>
+              </div>
+            </div>
+
+            <!-- User 3: أحمد (HR Manager Alex) -->
+            <div class="p-4 hover:bg-gray-50 flex items-center gap-3">
+              <div class="w-10 h-10 bg-blue-100 text-blue-700 rounded-full flex items-center justify-center font-bold">أ</div>
+              <div class="flex-1">
+                <div class="font-semibold text-gray-900">أحمد سعيد</div>
+                <div class="text-xs text-gray-500">📱 0101000002 · HR Manager</div>
+              </div>
+              <div class="text-left">
+                <span class="px-2 py-1 text-xs font-medium bg-green-100 text-green-700 rounded-full">hr_manager</span>
+                <div class="text-xs text-gray-500 mt-1">Branch:Alex 🏢</div>
+              </div>
+            </div>
+
+            <!-- User 4: محمد (HR Manager Kafr) -->
+            <div class="p-4 hover:bg-gray-50 flex items-center gap-3">
+              <div class="w-10 h-10 bg-cyan-100 text-cyan-700 rounded-full flex items-center justify-center font-bold">م</div>
+              <div class="flex-1">
+                <div class="font-semibold text-gray-900">محمد طارق</div>
+                <div class="text-xs text-gray-500">📱 0101000003 · HR Manager</div>
+              </div>
+              <div class="text-left">
+                <span class="px-2 py-1 text-xs font-medium bg-green-100 text-green-700 rounded-full">hr_manager</span>
+                <div class="text-xs text-gray-500 mt-1">Branch:Kafr 🏢</div>
+              </div>
+            </div>
+
+            <!-- User 5: سلمى (Sales Director) -->
+            <div class="p-4 hover:bg-gray-50 flex items-center gap-3 bg-yellow-50">
+              <div class="w-10 h-10 bg-rose-100 text-rose-700 rounded-full flex items-center justify-center font-bold">س</div>
+              <div class="flex-1">
+                <div class="font-semibold text-gray-900 flex items-center gap-2">
+                  سلمى العزب
+                  <span class="text-xs px-1.5 py-0.5 bg-yellow-200 text-yellow-800 rounded-full">⭐ Cross-Branch</span>
+                </div>
+                <div class="text-xs text-gray-500">📱 0101000004 · Sales Director</div>
+              </div>
+              <div class="text-left">
+                <span class="px-2 py-1 text-xs font-medium bg-orange-100 text-orange-700 rounded-full">sales_director</span>
+                <div class="text-xs text-gray-500 mt-1">Team:Egypt Sales 👥</div>
+              </div>
+            </div>
+
+            <!-- User 6: خالد (Branch Manager Tanta) -->
+            <div class="p-4 hover:bg-gray-50 flex items-center gap-3">
+              <div class="w-10 h-10 bg-orange-100 text-orange-700 rounded-full flex items-center justify-center font-bold">خ</div>
+              <div class="flex-1">
+                <div class="font-semibold text-gray-900">خالد فؤاد</div>
+                <div class="text-xs text-gray-500">📱 0101000005 · Branch Manager</div>
+              </div>
+              <div class="text-left">
+                <span class="px-2 py-1 text-xs font-medium bg-yellow-100 text-yellow-700 rounded-full">branch_manager</span>
+                <div class="text-xs text-gray-500 mt-1">Branch:Tanta 🏢</div>
+              </div>
+            </div>
+
+            <!-- User 7: منى (HR Specialist) -->
+            <div class="p-4 hover:bg-gray-50 flex items-center gap-3">
+              <div class="w-10 h-10 bg-teal-100 text-teal-700 rounded-full flex items-center justify-center font-bold">م</div>
+              <div class="flex-1">
+                <div class="font-semibold text-gray-900">منى عبد الله</div>
+                <div class="text-xs text-gray-500">📱 0101000006 · HR Specialist</div>
+              </div>
+              <div class="text-left">
+                <span class="px-2 py-1 text-xs font-medium bg-teal-100 text-teal-700 rounded-full">hr_specialist</span>
+                <div class="text-xs text-gray-500 mt-1">Dept:HR Alex 📁</div>
+              </div>
+            </div>
+
+            <!-- User 8: نهى (Dept Manager) -->
+            <div class="p-4 hover:bg-gray-50 flex items-center gap-3">
+              <div class="w-10 h-10 bg-violet-100 text-violet-700 rounded-full flex items-center justify-center font-bold">ن</div>
+              <div class="flex-1">
+                <div class="font-semibold text-gray-900">نهى السيد</div>
+                <div class="text-xs text-gray-500">📱 0101000007 · Sales Dept Manager</div>
+              </div>
+              <div class="text-left">
+                <span class="px-2 py-1 text-xs font-medium bg-violet-100 text-violet-700 rounded-full">dept_manager</span>
+                <div class="text-xs text-gray-500 mt-1">Dept:Sales Kafr 📁</div>
+              </div>
+            </div>
+
+            <!-- User 9: عمر (IT Engineer + Team Member) -->
+            <div class="p-4 hover:bg-gray-50 flex items-center gap-3 bg-yellow-50">
+              <div class="w-10 h-10 bg-amber-100 text-amber-700 rounded-full flex items-center justify-center font-bold">ع</div>
+              <div class="flex-1">
+                <div class="font-semibold text-gray-900 flex items-center gap-2">
+                  عمر إبراهيم
+                  <span class="text-xs px-1.5 py-0.5 bg-yellow-200 text-yellow-800 rounded-full">+ Team</span>
+                </div>
+                <div class="text-xs text-gray-500">📱 0101000008 · IT Engineer</div>
+              </div>
+              <div class="text-left">
+                <span class="px-2 py-1 text-xs font-medium bg-gray-100 text-gray-700 rounded-full">employee</span>
+                <div class="text-xs text-gray-500 mt-1">Self + Team Member</div>
+              </div>
+            </div>
+
+            <!-- User 10: علي (Sales Rep) -->
+            <div class="p-4 hover:bg-gray-50 flex items-center gap-3">
+              <div class="w-10 h-10 bg-lime-100 text-lime-700 rounded-full flex items-center justify-center font-bold">ع</div>
+              <div class="flex-1">
+                <div class="font-semibold text-gray-900">علي رضا</div>
+                <div class="text-xs text-gray-500">📱 0101000009 · Sales Rep</div>
+              </div>
+              <div class="text-left">
+                <span class="px-2 py-1 text-xs font-medium bg-gray-100 text-gray-700 rounded-full">employee</span>
+                <div class="text-xs text-gray-500 mt-1">Employee:Self</div>
+              </div>
+            </div>
+
+            <!-- User 11: هند -->
+            <div class="p-4 hover:bg-gray-50 flex items-center gap-3">
+              <div class="w-10 h-10 bg-fuchsia-100 text-fuchsia-700 rounded-full flex items-center justify-center font-bold">ه</div>
+              <div class="flex-1">
+                <div class="font-semibold text-gray-900">هند مصطفى</div>
+                <div class="text-xs text-gray-500">📱 0101000010 · Sales Rep</div>
+              </div>
+              <div class="text-left">
+                <span class="px-2 py-1 text-xs font-medium bg-gray-100 text-gray-700 rounded-full">employee</span>
+                <div class="text-xs text-gray-500 mt-1">Employee:Self</div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- RIGHT: Scope Types Reference -->
+        <div class="space-y-4">
+
+          <div class="bg-white rounded-xl shadow-sm border border-gray-200 p-5">
+            <h3 class="font-bold text-gray-900 mb-4 flex items-center gap-2"><span>🎯</span> الـ 5 أنواع Scopes</h3>
+            <div class="space-y-3">
+              <div class="flex items-start gap-3 p-3 bg-purple-50 rounded-lg">
+                <div class="text-2xl">🌐</div>
+                <div>
+                  <div class="font-semibold text-sm text-gray-900">Company</div>
+                  <div class="text-xs text-gray-500">يشوف كل حاجة (Super Admin)</div>
+                </div>
+              </div>
+              <div class="flex items-start gap-3 p-3 bg-blue-50 rounded-lg">
+                <div class="text-2xl">🏢</div>
+                <div>
+                  <div class="font-semibold text-sm text-gray-900">Branch</div>
+                  <div class="text-xs text-gray-500">فرع واحد بس</div>
+                </div>
+              </div>
+              <div class="flex items-start gap-3 p-3 bg-green-50 rounded-lg">
+                <div class="text-2xl">📁</div>
+                <div>
+                  <div class="font-semibold text-sm text-gray-900">Department</div>
+                  <div class="text-xs text-gray-500">قسم واحد في فرع</div>
+                </div>
+              </div>
+              <div class="flex items-start gap-3 p-3 bg-yellow-50 rounded-lg">
+                <div class="text-2xl">👥</div>
+                <div>
+                  <div class="font-semibold text-sm text-gray-900">Team ⭐</div>
+                  <div class="text-xs text-gray-500">فريق يخترق فروع</div>
+                </div>
+              </div>
+              <div class="flex items-start gap-3 p-3 bg-orange-50 rounded-lg">
+                <div class="text-2xl">👤</div>
+                <div>
+                  <div class="font-semibold text-sm text-gray-900">Employee</div>
+                  <div class="text-xs text-gray-500">موظف واحد (Self)</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-white rounded-xl shadow-sm border border-gray-200 p-5">
+            <h3 class="font-bold text-gray-900 mb-3">📊 إحصائيات سريعة</h3>
+            <div class="space-y-2 text-sm">
+              <div class="flex justify-between"><span class="text-gray-500">Users نشطة:</span> <b>11</b></div>
+              <div class="flex justify-between"><span class="text-gray-500">Roles:</span> <b>8</b></div>
+              <div class="flex justify-between"><span class="text-gray-500">Permissions:</span> <b>25</b></div>
+              <div class="flex justify-between"><span class="text-gray-500">Role Assignments:</span> <b>11</b></div>
+              <div class="flex justify-between"><span class="text-gray-500">محاولات فاشلة (24س):</span> <b class="text-red-600">3</b></div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Selected User Detail (preview) -->
+      <div class="mt-6 bg-white rounded-xl shadow-sm border border-gray-200 p-6">
+        <div class="flex items-center justify-between mb-5">
+          <div class="flex items-center gap-3">
+            <div class="w-12 h-12 bg-rose-100 text-rose-700 rounded-full flex items-center justify-center font-bold text-lg">س</div>
+            <div>
+              <h3 class="font-bold text-gray-900">سلمى العزب — Sales Director</h3>
+              <p class="text-xs text-gray-500">User ID: 5 · Active · آخر دخول منذ ساعة</p>
+            </div>
+          </div>
+          <button class="px-3 py-1.5 bg-indigo-600 text-white rounded-lg text-sm font-semibold hover:bg-indigo-700">+ إسناد Role جديد</button>
+        </div>
+
+        <div class="space-y-3">
+          <div class="text-sm font-semibold text-gray-700 mb-2">الـ Roles المسندة:</div>
+
+          <div class="border border-gray-200 rounded-lg p-4 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+              <span class="w-10 h-10 bg-orange-100 text-orange-700 rounded-lg flex items-center justify-center text-xl">⭐</span>
+              <div>
+                <div class="font-semibold text-gray-900">sales_director</div>
+                <div class="text-xs text-gray-500">Sales Director Role · 8 permissions</div>
+              </div>
+            </div>
+            <div class="flex items-center gap-3">
+              <div class="text-left">
+                <div class="text-xs text-gray-500">Scope</div>
+                <span class="px-3 py-1.5 bg-yellow-100 text-yellow-800 text-sm font-medium rounded-lg">👥 Team: Egypt Sales Squad</span>
+              </div>
+              <button class="text-gray-400 hover:text-red-600">×</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-4 p-4 bg-blue-50 border border-blue-200 rounded-lg text-sm text-blue-900">
+          💡 <b>المرونة المعمارية</b>: سلمى تقدر تشوف كل أعضاء Egypt Sales Squad بغض النظر عن فروعهم (إسكندرية، كفر الشيخ، طنطا).
+          لو حبيت تخلّيها تدير Sales في فرع معين بس → بدّل الـ Scope لـ <code class="bg-blue-100 px-1 rounded">branch:2</code>. صف واحد بس في DB.
+        </div>
+      </div>
+
+    </main>
+  </div>
+
+</body>
+</html>

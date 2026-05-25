@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>بروفايل الموظف - نظام النور HR</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet">
+  <style>
+    * { font-family: 'Cairo', sans-serif; }
+    .gradient-bg { background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%); }
+    .tab-active { background: #4f46e5; color: white; }
+    .tab-active span { color: white; }
+  </style>
+</head>
+<body class="bg-gray-50">
+
+  <!-- Header -->
+  <header class="bg-white shadow-sm border-b border-gray-200 sticky top-0 z-10">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <div class="w-10 h-10 gradient-bg rounded-lg flex items-center justify-center text-white text-xl font-bold">N</div>
+        <h1 class="text-lg font-bold text-gray-900">نظام النور HR</h1>
+      </div>
+      <div class="flex items-center gap-3">
+        <div class="w-9 h-9 bg-indigo-100 rounded-full flex items-center justify-center font-semibold text-indigo-700">ي</div>
+        <div class="text-sm">
+          <div class="font-semibold text-gray-900">يوسف الشيخ</div>
+          <div class="text-xs text-gray-500">CEO</div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="max-w-7xl mx-auto px-6 py-6">
+
+    <!-- Breadcrumb + Back -->
+    <div class="flex items-center justify-between mb-4">
+      <div class="text-sm text-gray-500">
+        <a href="employees.html" class="hover:text-indigo-600">الموظفين</a> ← بروفايل علي رضا
+      </div>
+      <a href="employees.html" class="text-sm text-indigo-600 hover:underline">→ الرجوع للقائمة</a>
+    </div>
+
+    <!-- Profile Hero -->
+    <div class="bg-white rounded-2xl shadow-sm border border-gray-200 overflow-hidden mb-6">
+      <div class="gradient-bg h-32"></div>
+      <div class="px-8 pb-6 -mt-16 relative">
+        <div class="flex items-end justify-between flex-wrap gap-4">
+          <div class="flex items-end gap-5">
+            <div class="w-32 h-32 bg-lime-100 text-lime-700 rounded-2xl flex items-center justify-center text-5xl font-bold border-4 border-white shadow-lg">ع</div>
+            <div class="pb-2">
+              <h2 class="text-2xl font-bold text-gray-900">علي رضا</h2>
+              <p class="text-gray-600">Sales Representative · Sales Kafr Elsheikh</p>
+              <div class="flex items-center gap-2 mt-2">
+                <span class="px-2 py-1 text-xs font-medium bg-green-100 text-green-700 rounded-full">Active</span>
+                <span class="px-2 py-1 text-xs font-medium bg-blue-100 text-blue-700 rounded-full">عنده Login</span>
+                <span class="px-2 py-1 text-xs font-medium bg-purple-100 text-purple-700 rounded-full">عضو في Egypt Sales Squad</span>
+              </div>
+            </div>
+          </div>
+          <div class="flex gap-2 pb-2">
+            <button class="px-4 py-2 border border-gray-300 bg-white rounded-lg text-sm font-semibold hover:bg-gray-50">✏️ تعديل</button>
+            <button class="px-4 py-2 border border-orange-300 bg-orange-50 text-orange-700 rounded-lg text-sm font-semibold hover:bg-orange-100">⏸ تعطيل Login</button>
+            <button class="px-4 py-2 border border-red-300 bg-red-50 text-red-700 rounded-lg text-sm font-semibold hover:bg-red-100">🚪 إنهاء خدمة</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tabs -->
+    <div class="bg-white rounded-xl shadow-sm border border-gray-200 mb-6 p-2 flex gap-1 overflow-x-auto">
+      <button class="tab-active px-4 py-2 rounded-lg text-sm font-semibold whitespace-nowrap flex items-center gap-2">
+        <span>👤</span> Basic Info
+      </button>
+      <button class="px-4 py-2 rounded-lg text-sm font-semibold whitespace-nowrap hover:bg-gray-100 flex items-center gap-2">
+        <span>🏢</span> Organizational
+      </button>
+      <button class="px-4 py-2 rounded-lg text-sm font-semibold whitespace-nowrap hover:bg-gray-100 flex items-center gap-2">
+        <span>📞</span> Contact
+      </button>
+      <button class="px-4 py-2 rounded-lg text-sm font-semibold whitespace-nowrap hover:bg-gray-100 flex items-center gap-2">
+        <span>💼</span> Employment
+      </button>
+      <button class="px-4 py-2 rounded-lg text-sm font-semibold whitespace-nowrap hover:bg-gray-100 flex items-center gap-2">
+        <span>📊</span> Activity
+      </button>
+      <button class="px-4 py-2 rounded-lg text-sm font-semibold whitespace-nowrap hover:bg-gray-100 flex items-center gap-2">
+        <span>🔐</span> System Access
+      </button>
+      <button class="px-4 py-2 rounded-lg text-sm font-semibold whitespace-nowrap hover:bg-gray-100 flex items-center gap-2">
+        <span>📝</span> HR Notes
+      </button>
+      <button class="px-4 py-2 rounded-lg text-sm font-semibold whitespace-nowrap hover:bg-gray-100 flex items-center gap-2 border-r-2 border-gray-200 mr-2 pr-4">
+        <span>📂</span> Documents
+        <span class="px-1.5 py-0.5 bg-indigo-100 text-indigo-700 rounded-full text-xs">5</span>
+      </button>
+    </div>
+
+    <!-- All Sections (نعرضهم كلهم متتاليين للـ Mockup) -->
+
+    <!-- 1. Basic Info -->
+    <section class="bg-white rounded-xl shadow-sm border border-gray-200 p-6 mb-6">
+      <h3 class="text-lg font-bold text-gray-900 mb-4 flex items-center gap-2">
+        <span class="w-8 h-8 bg-indigo-100 rounded-lg flex items-center justify-center">👤</span>
+        Basic Info — البيانات الأساسية
+      </h3>
+      <div class="grid grid-cols-3 gap-6">
+        <div>
+          <div class="text-xs text-gray-500 mb-1">الاسم الكامل</div>
+          <div class="font-semibold text-gray-900">علي رضا محمد عبد العزيز</div>
+        </div>
+        <div>
+          <div class="text-xs text-gray-500 mb-1">كود الموظف</div>
+          <div class="font-semibold text-gray-900">EMP-2023-010</div>
+        </div>
+        <div>
+          <div class="text-xs text-gray-500 mb-1">الرقم القومي</div>
+          <div class="font-semibold text-gray-900">29501012345678</div>
+        </div>
+        <div>
+          <div class="text-xs text-gray-500 mb-1">تاريخ الميلاد</div>
+          <div class="font-semibold text-gray-900">15 يناير 1995</div>
+        </div>
+        <div>
+          <div class="text-xs text-gray-500 mb-1">النوع</div>
+          <div class="font-semibold text-gray-900">ذكر</div>
+        </div>
+        <div>
+          <div class="text-xs text-gray-500 mb-1">الحالة الاجتماعية</div>
+          <div class="font-semibold text-gray-900">أعزب</div>
+        </div>
+        <div>
+          <div class="text-xs text-gray-500 mb-1">تاريخ التعيين</div>
+          <div class="font-semibold text-gray-900">5 مارس 2023</div>
+        </div>
+        <div>
+          <div class="text-xs text-gray-500 mb-1">حالة الموظف</div>
+          <div><span class="px-2 py-1 text-xs font-medium bg-green-100 text-green-700 rounded-full">Active</span></div>
+        </div>
+        <div>
+          <div class="text-xs text-gray-500 mb-1">سنوات الخدمة</div>
+          <div class="font-semibold text-gray-900">3 سنوات و شهرين</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. Organizational Info -->
+    <section class="bg-white rounded-xl shadow-sm border border-gray-200 p-6 mb-6">
+      <h3 class="text-lg font-bold text-gray-900 mb-4 flex items-center gap-2">
+        <span class="w-8 h-8 bg-purple-100 rounded-lg flex items-center justify-center">🏢</span>
+        Organizational Info — البيانات التنظيمية
+      </h3>
+      <div class="grid grid-cols-3 gap-6">
+        <div>
+          <div class="text-xs text-gray-500 mb-1">الفرع</div>
+          <div class="font-semibold text-gray-900">فرع كفر الشيخ</div>
+          <div class="text-xs text-gray-500">BR-KFS</div>
+        </div>
+        <div>
+          <div class="text-xs text-gray-500 mb-1">القسم</div>
+          <div class="font-semibold text-gray-900">Sales Kafr Elsheikh</div>
+          <div class="text-xs text-gray-500">DEPT-KFS-SLS</div>
+        </div>
+        <div>
+          <div class="text-xs text-gray-500 mb-1">المنصب</div>
+          <div class="font-semibold text-gray-900">Sales Representative</div>
+        </div>
+        <div>
+          <div class="text-xs text-gray-500 mb-1">المدير المباشر</div>
+          <div class="font-semibold text-gray-900 flex items-center gap-2">
+            <div class="w-6 h-6 bg-violet-100 text-violet-700 rounded-full flex items-center justify-center text-xs font-bold">ن</div>
+            نهى السيد
+          </div>
+          <div class="text-xs text-gray-500">Sales Dept Manager - Kafr</div>
+        </div>
+        <div>
+          <div class="text-xs text-gray-500 mb-1">عضوية الفرق (Teams)</div>
+          <div class="space-y-1">
+            <div class="inline-block px-2 py-1 bg-yellow-50 text-yellow-700 rounded text-xs font-medium">⭐ Egypt Sales Squad</div>
+          </div>
+        </div>
+        <div>
+          <div class="text-xs text-gray-500 mb-1">المدراء الإضافيين (Matrix)</div>
+          <div class="font-semibold text-gray-900 flex items-center gap-2">
+            <div class="w-6 h-6 bg-rose-100 text-rose-700 rounded-full flex items-center justify-center text-xs font-bold">س</div>
+            سلمى العزب
+          </div>
+          <div class="text-xs text-gray-500">Sales Director (via Team)</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. Contact Info -->
+    <section class="bg-white rounded-xl shadow-sm border border-gray-200 p-6 mb-6">
+      <h3 class="text-lg font-bold text-gray-900 mb-4 flex items-center gap-2">
+        <span class="w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center">📞</span>
+        Contact Info — بيانات الاتصال
+      </h3>
+      <div class="grid grid-cols-3 gap-6">
+        <div>
+          <div class="text-xs text-gray-500 mb-1">رقم الموبايل (Login)</div>
+          <div class="font-semibold text-gray-900">01012345678</div>
+        </div>
+        <div>
+          <div class="text-xs text-gray-500 mb-1">موبايل شخصي إضافي</div>
+          <div class="font-semibold text-gray-900">01198765432</div>
+        </div>
+        <div>
+          <div class="text-xs text-gray-500 mb-1">البريد الإلكتروني الشخصي</div>
+          <div class="font-semibold text-gray-900">ali.reda@gmail.com</div>
+        </div>
+        <div class="col-span-2">
+          <div class="text-xs text-gray-500 mb-1">العنوان</div>
+          <div class="font-semibold text-gray-900">5 شارع الجيش، حي الجامعة، كفر الشيخ</div>
+        </div>
+        <div>
+          <div class="text-xs text-gray-500 mb-1">جهة الاتصال في الطوارئ</div>
+          <div class="font-semibold text-gray-900">والده: 01034567890</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. Employment Info -->
+    <section class="bg-white rounded-xl shadow-sm border border-gray-200 p-6 mb-6">
+      <h3 class="text-lg font-bold text-gray-900 mb-4 flex items-center gap-2">
+        <span class="w-8 h-8 bg-green-100 rounded-lg flex items-center justify-center">💼</span>
+        Employment Info — بيانات التوظيف
+      </h3>
+      <div class="grid grid-cols-3 gap-6">
+        <div>
+          <div class="text-xs text-gray-500 mb-1">نوع التوظيف</div>
+          <div><span class="px-2 py-1 text-xs font-medium bg-blue-100 text-blue-700 rounded-full">Full-Time</span></div>
+        </div>
+        <div>
+          <div class="text-xs text-gray-500 mb-1">نوع العقد</div>
+          <div class="font-semibold text-gray-900">عقد دائم</div>
+        </div>
+        <div>
+          <div class="text-xs text-gray-500 mb-1">المرتب الأساسي</div>
+          <div class="font-semibold text-gray-900">— مخفي حسب الصلاحية —</div>
+          <div class="text-xs text-orange-600">يحتاج payroll.read</div>
+        </div>
+        <div>
+          <div class="text-xs text-gray-500 mb-1">شيفت العمل</div>
+          <div class="font-semibold text-gray-900">9 ص - 5 م (أحد - خميس)</div>
+        </div>
+        <div>
+          <div class="text-xs text-gray-500 mb-1">طريقة الصرف</div>
+          <div class="font-semibold text-gray-900">تحويل بنكي</div>
+        </div>
+        <div>
+          <div class="text-xs text-gray-500 mb-1">رقم التأمين الاجتماعي</div>
+          <div class="font-semibold text-gray-900">29501012345-001</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. Activity Info -->
+    <section class="bg-white rounded-xl shadow-sm border border-gray-200 p-6 mb-6">
+      <h3 class="text-lg font-bold text-gray-900 mb-4 flex items-center gap-2">
+        <span class="w-8 h-8 bg-orange-100 rounded-lg flex items-center justify-center">📊</span>
+        Activity Info — النشاط والأداء
+      </h3>
+      <div class="grid grid-cols-4 gap-4">
+        <div class="bg-blue-50 p-4 rounded-lg">
+          <div class="text-xs text-blue-700 mb-1">معدل الحضور (هذا الشهر)</div>
+          <div class="text-2xl font-bold text-blue-900">96%</div>
+          <div class="text-xs text-blue-700 mt-1">22 من 23 يوم</div>
+        </div>
+        <div class="bg-green-50 p-4 rounded-lg">
+          <div class="text-xs text-green-700 mb-1">رصيد الإجازات</div>
+          <div class="text-2xl font-bold text-green-900">18 يوم</div>
+          <div class="text-xs text-green-700 mt-1">من 21 يوم سنوي</div>
+        </div>
+        <div class="bg-purple-50 p-4 rounded-lg">
+          <div class="text-xs text-purple-700 mb-1">آخر إجازة</div>
+          <div class="text-lg font-bold text-purple-900">15-17 مارس</div>
+          <div class="text-xs text-purple-700 mt-1">3 أيام - عادية</div>
+        </div>
+        <div class="bg-yellow-50 p-4 rounded-lg">
+          <div class="text-xs text-yellow-700 mb-1">آخر تقييم أداء</div>
+          <div class="text-2xl font-bold text-yellow-900">⭐ 4.2/5</div>
+          <div class="text-xs text-yellow-700 mt-1">Q1 2026</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. System Access -->
+    <section class="bg-white rounded-xl shadow-sm border border-gray-200 p-6 mb-6">
+      <h3 class="text-lg font-bold text-gray-900 mb-4 flex items-center gap-2">
+        <span class="w-8 h-8 bg-red-100 rounded-lg flex items-center justify-center">🔐</span>
+        System Access — صلاحيات الدخول
+      </h3>
+      <div class="grid grid-cols-3 gap-6 mb-4">
+        <div>
+          <div class="text-xs text-gray-500 mb-1">حالة الحساب</div>
+          <div><span class="px-2 py-1 text-xs font-medium bg-green-100 text-green-700 rounded-full">Active</span></div>
+        </div>
+        <div>
+          <div class="text-xs text-gray-500 mb-1">آخر تسجيل دخول</div>
+          <div class="font-semibold text-gray-900">اليوم - 8:32 صباحاً</div>
+          <div class="text-xs text-gray-500">IP: 197.45.123.45</div>
+        </div>
+        <div>
+          <div class="text-xs text-gray-500 mb-1">طلب تغيير باسورد إجباري؟</div>
+          <div><span class="text-green-600 font-semibold">✓ مش مطلوب</span></div>
+        </div>
+      </div>
+
+      <div class="border-t border-gray-200 pt-4">
+        <div class="text-sm font-semibold text-gray-900 mb-3">الـ Roles المسندة:</div>
+        <div class="space-y-2">
+          <div class="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
+            <div class="flex items-center gap-3">
+              <span class="w-8 h-8 bg-indigo-100 text-indigo-700 rounded-lg flex items-center justify-center font-bold">👤</span>
+              <div>
+                <div class="font-semibold text-gray-900">employee</div>
+                <div class="text-xs text-gray-500">الدور الافتراضي للموظف</div>
+              </div>
+            </div>
+            <div class="flex items-center gap-2">
+              <span class="text-xs text-gray-500">Scope:</span>
+              <span class="px-2 py-1 text-xs font-medium bg-orange-100 text-orange-700 rounded">employee:10 (Self)</span>
+            </div>
+          </div>
+        </div>
+        <button class="mt-3 text-sm text-indigo-600 hover:underline">+ إسناد Role إضافي</button>
+      </div>
+    </section>
+
+    <!-- 7. HR Notes (Internal) -->
+    <section class="bg-yellow-50 rounded-xl shadow-sm border border-yellow-200 p-6 mb-6">
+      <h3 class="text-lg font-bold text-gray-900 mb-4 flex items-center gap-2">
+        <span class="w-8 h-8 bg-yellow-100 rounded-lg flex items-center justify-center">📝</span>
+        HR Notes — ملاحظات HR (داخلي)
+        <span class="text-xs text-orange-600 mr-auto">🔒 يحتاج hr.notes.read</span>
+      </h3>
+
+      <div class="space-y-3">
+        <!-- Promotion -->
+        <div class="bg-white p-4 rounded-lg border-r-4 border-green-500">
+          <div class="flex items-center justify-between mb-1">
+            <span class="font-semibold text-green-700">🎉 ترقية</span>
+            <span class="text-xs text-gray-500">15 يناير 2025</span>
+          </div>
+          <p class="text-sm text-gray-700">تم ترقيته من Junior Sales Rep إلى Sales Rep بعد تحقيق 120% من الـ target.</p>
+          <div class="text-xs text-gray-500 mt-2">بواسطة: نهى السيد</div>
+        </div>
+
+        <!-- Warning -->
+        <div class="bg-white p-4 rounded-lg border-r-4 border-yellow-500">
+          <div class="flex items-center justify-between mb-1">
+            <span class="font-semibold text-yellow-700">⚠️ تنبيه</span>
+            <span class="text-xs text-gray-500">3 ديسمبر 2024</span>
+          </div>
+          <p class="text-sm text-gray-700">تأخر متكرر عن الميعاد (3 مرات في الأسبوع). تم تنبيهه شفهياً.</p>
+          <div class="text-xs text-gray-500 mt-2">بواسطة: محمد طارق</div>
+        </div>
+
+        <!-- General Note -->
+        <div class="bg-white p-4 rounded-lg border-r-4 border-blue-500">
+          <div class="flex items-center justify-between mb-1">
+            <span class="font-semibold text-blue-700">💬 ملاحظة</span>
+            <span class="text-xs text-gray-500">10 سبتمبر 2024</span>
+          </div>
+          <p class="text-sm text-gray-700">انضم لـ Egypt Sales Squad. أبدى استعداد كبير للسفر بين الفروع.</p>
+          <div class="text-xs text-gray-500 mt-2">بواسطة: سلمى العزب</div>
+        </div>
+      </div>
+      <button class="mt-4 px-4 py-2 bg-yellow-600 text-white rounded-lg text-sm font-semibold hover:bg-yellow-700">+ إضافة ملاحظة</button>
+    </section>
+
+    <!-- 8. Documents -->
+    <section class="bg-white rounded-xl shadow-sm border border-gray-200 p-6 mb-6">
+      <div class="flex items-center justify-between mb-4">
+        <h3 class="text-lg font-bold text-gray-900 flex items-center gap-2">
+          <span class="w-8 h-8 bg-cyan-100 rounded-lg flex items-center justify-center">📂</span>
+          Documents — المستندات
+        </h3>
+        <button class="px-4 py-2 bg-indigo-600 text-white rounded-lg text-sm font-semibold hover:bg-indigo-700">⬆ رفع مستند</button>
+      </div>
+
+      <div class="grid grid-cols-3 gap-4">
+        <div class="border border-gray-200 rounded-lg p-4 hover:shadow-md transition">
+          <div class="flex items-start justify-between mb-3">
+            <div class="w-12 h-12 bg-red-100 text-red-700 rounded-lg flex items-center justify-center text-2xl">📄</div>
+            <span class="px-2 py-1 text-xs font-medium bg-green-100 text-green-700 rounded-full">معتمد</span>
+          </div>
+          <h4 class="font-semibold text-gray-900 mb-1">عقد العمل</h4>
+          <p class="text-xs text-gray-500">PDF · 1.2 MB · 5 مارس 2023</p>
+          <div class="flex gap-2 mt-3">
+            <button class="flex-1 text-xs px-2 py-1 border border-gray-300 rounded hover:bg-gray-50">👁️ عرض</button>
+            <button class="flex-1 text-xs px-2 py-1 border border-gray-300 rounded hover:bg-gray-50">⬇️ تنزيل</button>
+          </div>
+        </div>
+
+        <div class="border border-gray-200 rounded-lg p-4 hover:shadow-md transition">
+          <div class="flex items-start justify-between mb-3">
+            <div class="w-12 h-12 bg-blue-100 text-blue-700 rounded-lg flex items-center justify-center text-2xl">🆔</div>
+            <span class="px-2 py-1 text-xs font-medium bg-green-100 text-green-700 rounded-full">معتمد</span>
+          </div>
+          <h4 class="font-semibold text-gray-900 mb-1">بطاقة الرقم القومي</h4>
+          <p class="text-xs text-gray-500">JPG · 850 KB · 5 مارس 2023</p>
+          <div class="flex gap-2 mt-3">
+            <button class="flex-1 text-xs px-2 py-1 border border-gray-300 rounded hover:bg-gray-50">👁️ عرض</button>
+            <button class="flex-1 text-xs px-2 py-1 border border-gray-300 rounded hover:bg-gray-50">⬇️ تنزيل</button>
+          </div>
+        </div>
+
+        <div class="border border-gray-200 rounded-lg p-4 hover:shadow-md transition">
+          <div class="flex items-start justify-between mb-3">
+            <div class="w-12 h-12 bg-purple-100 text-purple-700 rounded-lg flex items-center justify-center text-2xl">🎓</div>
+            <span class="px-2 py-1 text-xs font-medium bg-green-100 text-green-700 rounded-full">معتمد</span>
+          </div>
+          <h4 class="font-semibold text-gray-900 mb-1">شهادة التخرج</h4>
+          <p class="text-xs text-gray-500">PDF · 2.1 MB · 5 مارس 2023</p>
+          <div class="flex gap-2 mt-3">
+            <button class="flex-1 text-xs px-2 py-1 border border-gray-300 rounded hover:bg-gray-50">👁️ عرض</button>
+            <button class="flex-1 text-xs px-2 py-1 border border-gray-300 rounded hover:bg-gray-50">⬇️ تنزيل</button>
+          </div>
+        </div>
+
+        <div class="border border-gray-200 rounded-lg p-4 hover:shadow-md transition">
+          <div class="flex items-start justify-between mb-3">
+            <div class="w-12 h-12 bg-green-100 text-green-700 rounded-lg flex items-center justify-center text-2xl">📷</div>
+            <span class="px-2 py-1 text-xs font-medium bg-green-100 text-green-700 rounded-full">معتمد</span>
+          </div>
+          <h4 class="font-semibold text-gray-900 mb-1">صورة شخصية</h4>
+          <p class="text-xs text-gray-500">JPG · 450 KB · 5 مارس 2023</p>
+          <div class="flex gap-2 mt-3">
+            <button class="flex-1 text-xs px-2 py-1 border border-gray-300 rounded hover:bg-gray-50">👁️ عرض</button>
+            <button class="flex-1 text-xs px-2 py-1 border border-gray-300 rounded hover:bg-gray-50">⬇️ تنزيل</button>
+          </div>
+        </div>
+
+        <div class="border border-gray-200 rounded-lg p-4 hover:shadow-md transition">
+          <div class="flex items-start justify-between mb-3">
+            <div class="w-12 h-12 bg-orange-100 text-orange-700 rounded-lg flex items-center justify-center text-2xl">🏥</div>
+            <span class="px-2 py-1 text-xs font-medium bg-yellow-100 text-yellow-700 rounded-full">في المراجعة</span>
+          </div>
+          <h4 class="font-semibold text-gray-900 mb-1">شهادة تأمين صحي</h4>
+          <p class="text-xs text-gray-500">PDF · 980 KB · أمس</p>
+          <div class="flex gap-2 mt-3">
+            <button class="flex-1 text-xs px-2 py-1 border border-gray-300 rounded hover:bg-gray-50">👁️ عرض</button>
+            <button class="flex-1 text-xs px-2 py-1 border border-gray-300 rounded hover:bg-gray-50">⬇️ تنزيل</button>
+          </div>
+        </div>
+
+        <!-- Empty State -->
+        <button class="border-2 border-dashed border-gray-300 rounded-lg p-4 flex flex-col items-center justify-center hover:border-indigo-500 hover:bg-indigo-50 transition">
+          <div class="w-12 h-12 bg-gray-100 text-gray-400 rounded-lg flex items-center justify-center text-2xl mb-2">+</div>
+          <p class="text-sm text-gray-600">إضافة مستند جديد</p>
+        </button>
+      </div>
+    </section>
+
+  </div>
+
+</body>
+</html>
